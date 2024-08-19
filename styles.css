@@ -1,17 +1,19 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f0f0; /* Uniform background color */
+    background-color: #ffffff; /* Uniform background color */
     color: #333;
+    background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+    background-size: cover;
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background: linear-gradient(135deg, #4cacaf, #66bbb5);
+    color: black;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
 }
 
 header h1 {
@@ -37,41 +39,44 @@ main {
 }
 
 .info-box {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
     text-align: center;
     flex: 1;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .info-box h2 {
     margin: 10px 0;
-    color: #4CAF50;
+    color: #4ca5af;
 }
 
 .info-box p {
     font-size: 1em;
     color: #666;
-    font-family: 'Times New Roman', Times, serif;
-    font-style: inherit;
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
+    font-size: 40px;
     margin-bottom: 10px;
+    color: #4cafaf;
 }
 
 #image-gallery {
     text-align: center;
-    margin-bottom: 40px; /* Add padding between gallery and footer */
+    margin-bottom: 30px; /* Padding added between images and footer */
 }
 
 #image-gallery h2 {
     margin-bottom: 20px;
-    color: #4CAF50;
+    color: #4ca5af;
 }
 
 .gallery {
@@ -83,18 +88,30 @@ main {
     width: calc(100% / 4 - 10px); /* 25% width for each image minus the margin */
     height: auto;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
 }
 
 footer {
-    background-color: #333;
+    background: linear-gradient(135deg, #333, #555);
     color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
+    padding: 20px; /* Increase padding */
+    position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
 footer p {
@@ -102,7 +119,44 @@ footer p {
     font-size: 0.9em;
 }
 
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
+
+.cta-button {
+    background-color: #4c99af;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #388E3C;
+}
+
 @media (max-width: 768px) {
+    #contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
     .gallery {
         flex-direction: column;
     }
@@ -110,5 +164,13 @@ footer p {
     .gallery img {
         width: 100%;
         margin-bottom: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .cta-button {
+        margin-top: 10px;
     }
 }
